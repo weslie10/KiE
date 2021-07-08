@@ -1,0 +1,64 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="KiE.Master.vb" Inherits="Project.KiS" %>
+<% 
+    If Session("id_user") Is Nothing Then
+        Response.Redirect("~/Main/login/login.aspx")
+    End If
+    Dim url As String = Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath
+%>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="Assets/css/index.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="header-container">
+                <div class="hero">
+                    <h1>KiE</h1>
+                </div>
+                <div class="navbar">
+                    <%
+                        'List pages
+                        Dim pages = {
+                            {"Home", "index.aspx"}
+                        }
+                        Dim fileName = System.IO.Path.GetFileName(Request.Url.AbsolutePath)
+                        Dim dir = System.IO.Path.GetDirectoryName(Request.Url.AbsolutePath)
+                        Dim dirSplit = dir.Split("\")
+                        Dim second = ""
+                        If (dirSplit.Length > 2) Then
+                            second = dirSplit(2)
+                        End If
+
+                        Dim url As String = Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath
+                    %>
+                    <% For i = 0 To pages.GetLength(0) - 1 %>
+                       <a href="<%= url %>Main/<%= Session("level") %>/<%= pages(i, 1) %>" class="<%= If(fileName = pages(i, 1) And (dirSplit.Length = 3), "active", "") %>"><%= pages(i, 0) %></a>
+                    <% Next i %>
+
+                    <% If Session("level") = "Pengajar" Then %>
+                       <a href="<%= url %>Main/Pengajar/Mapel/index.aspx" class="<%= If(second = "Pengajar" And (dirSplit.Length > 3), "active", "") %>">List Mata Pelajaran</a>
+                    <% End If %>
+                    
+                    <% If Session("nama") IsNot Nothing Then %>
+                       <a href="<%= url %>Main/Login/logout.aspx"><span class="name"><%= Session("nama") %></span>, Logout</a>
+                    <% Else %>
+                       <a href="<%= url %>Main/Login/login.aspx" class="<%= If(fileName = "login", "active", "") %>">Login</a>
+                    <% End if %>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="content" runat="server"></asp:ContentPlaceHolder>
+            <div class="footer-container">
+                <h4>
+                    <asp:Label ID="footer" runat="server" Text="2021 &copy; Knowledge is Everything"></asp:Label>
+                </h4>
+            </div>
+        </div>
+    </form>
+    <script src="<%= url %>Assets/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="delete.aspx.vb" Inherits="Project.delete1" MasterPageFile="~/Main/Admin/Admin.Master" %>

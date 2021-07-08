@@ -1,0 +1,333 @@
+﻿* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: darkslateblue;
+    height: 7vh;
+    position: sticky;
+    color: white;
+    top: 0;
+}
+
+.name{
+    font-weight: bold;
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    font-size: 1.2em;
+}
+
+.hero h1 {
+    font-family: 'Alex Brush';
+}
+
+.navbar {
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 0 30px;
+}
+
+.active, .navbar a:hover {
+    color: orange !important;
+    font-weight: bold;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 20vw 1fr;
+    height: 86vh;
+}
+
+.sidebar {
+    background: #eee;
+    overflow-y: auto;
+    height: 100%;
+}
+.sidebar h1{
+    margin: 30px 30px 0 30px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.sidebar .active {
+    border-color: green;
+}
+
+.list-pelajaran {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.list-pelajaran a {
+    width: 100%;
+    list-style: none;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 15px 15px 15px 30px;
+    text-decoration-line: none;
+    border-left: 5px solid;
+    border-color: transparent;
+}
+
+.list-pelajaran a:hover {
+    filter: opacity(80%);
+    text-decoration: underline;
+    border-color: green;
+}
+
+.content {
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    background-color: darkslateblue;
+    color: white;
+}
+
+.login-container-outer{
+    height: 100vh;
+    background: linear-gradient(315deg, red, yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.login-container-inner {
+    padding: 30px;
+    border: 1px solid black;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 0 20px black;
+    min-width: 30vw;
+}
+
+.daftar-container-outer {
+    height: 100vh;
+    background: linear-gradient(45deg, #7F7FD5, #86A8E7, #91EAE4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.daftar-container-inner {
+    padding: 30px;
+    border: 1px solid black;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 0 20px white;
+}
+
+.col-2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-control{
+    padding: 10px;
+}
+
+.form-label{
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.btn{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.btn-login {
+    background: linear-gradient(315deg, lemonchiffon, ghostwhite);
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.btn-daftar {
+    background: linear-gradient(45deg, #2980B9, #6DD5FA, #FFFFFF);
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.btn-primary {
+    color: white;
+    background-color: dodgerblue;
+}
+
+.btn-danger {
+    color: white;
+    background-color: orangered;
+}
+
+.btn-warning {
+    color: black;
+    background-color: yellow;
+}
+
+hr{
+    margin: 20px 0;
+}
+
+.RegularExpressionValidator, .RequiredFieldValidator, .CompareValidator {
+    color: red;
+    font-size: .6em;
+}
+
+a {
+    color: black;
+}
+
+.list-topik li{
+    list-style: none;
+    font-size: 2em;
+}
+
+.list-topik a{
+    padding: 20px;
+    text-decoration: none;
+}
+
+.list-topik a:hover{
+    text-decoration: underline;
+}
+
+.list-latihan {
+    border: none;
+}
+
+.latihan{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 30px;
+    flex-direction: row;
+}
+
+.latihan-content{
+    display: grid;
+    grid-template-rows: auto fr;
+    grid-gap: 10px;
+}
+
+textarea{
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+.content-topik {
+    margin: 30px 0;
+}
+
+.table, .table td, .table tr, .table th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.table td, .table tr, .table th {
+    padding: 15px;
+}
+
+.my-15{
+    margin: 15px 0;
+}
+
+.session{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.div50 {
+    width: 50%;
+}
+
+.outer-cer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.inner-cer {
+    width: 70%;
+    height: 90%;
+    border: 15px outset #6DC9E3;
+    border-radius: 40px 0px 40px 0px;
+    padding: 50px;
+    font-size: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#score{
+    margin: 50px 0;
+    font-size: 3em;
+    font-style: italic;
+}
+
+#signature {
+    text-decoration: underline;
+    font-weight:bold;
+}
+
+.card {
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
